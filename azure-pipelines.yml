@@ -26,6 +26,6 @@ stages:
               goals: 'package'
           - task: PublishPipelineArtifact@1
             inputs:
-              targetPath: '$(artifactStagingDirectory)'
+              targetPath: '$(System.DefaultWorkingDirectory)/target/*.jar'
               artifact: 'mavenPackage'
               publishLocation: 'pipeline'
