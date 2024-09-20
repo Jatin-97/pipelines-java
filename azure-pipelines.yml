@@ -24,3 +24,8 @@ stages:
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/TEST-*.xml'
               goals: 'package'
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: '$(artifactStagingDirectory)'
+              artifact: 'mavenPackage'
+              publishLocation: 'pipeline'
